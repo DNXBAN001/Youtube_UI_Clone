@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+:root {
+    --color-grey: #e5e5e5;
+    --color-grey-dark: #e5e5e5d2;
+    --color-bg: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(3, 3, 3);
+}
+
+h4 {
+    font-size: 14px;
+    margin-left: 15px;
+    color: rgb(96, 96, 96);
+    margin-bottom: 10px;
+}
+
+hr {
+    height: 1px;
+    background-color: var(--color-grey);
+    border: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.material-icons {
+    color: rgb(96, 96, 96);
+}
+
+.menuBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 15px;
+}
+
+.menuBar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.menuBar .logo img {
+    width: 100px;
+    margin-left: 15px;
+}
+
+.menuBar i {
+    padding: 0 7px;
+}
+
+.menuBar .search form {
+    border: 1px solid #ddd;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menuBar .search input {
+    width: 500px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    height: 100%;
+}
+
+.menuBar .search button {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    /* border: none; */
+}
+
+.mainBody {
+    height: calc(100vh - 70px);
+    display: flex;
+    overflow: hidden;
+    flex-direction: row-reverse;
+}
+
+.categories {
+    height: 100%;
+    width: 500px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.mainBody .categories .categoriesSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainBody .categories .categoriesSection .category {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    text-decoration: none;
+}
+
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    left: 50px;
+    width: 55px;
+    height: 25px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #eb0606;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #707274;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* .mainBody .categories .categoriesSection .category .active {
+    color: red;
+} */
+
+.mainBody .categories .categoriesSection .category .video {
+    width: calc(100% - 10px);
+    margin-right: 10px;
+    display: flex;
+}
+
+.mainBody .categories .categoriesSection .video img {
+    height: 125px;
+    position: center;
+}
+
+.active-span {
+    background: var(--color-grey-dark);
+}
+
+.mainBody .categories .categoriesSection .category:hover {
+    background: var(--color-grey);
+    cursor: pointer;
+}
+
+
+/* Style the button that is used to open and close the collapsible content */
+
+.collapsible {
+    text-align: center;
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.collapsible:hover {
+    background-color: #ccc;
+}
+
+
+/* Style the collapsible content. Note: hidden by default */
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.videos {
+    background: var(--color-bg);
+    width: 100%;
+    height: 100%;
+    padding: 15px 25px;
+    border-top: 1px solid #ddd;
+    overflow-y: scroll;
+}
+
+
+/* topnav */
+
+.play .title .info p {
+    padding-top: 15px;
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+}
+
+
+/* topnav end */
+
+.videos .videosGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.videos .videosGrid .video {
+    width: calc(100% - 10px);
+    margin-right: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    border-bottom: rgb(238, 236, 236) 1px solid;
+}
+
+.videos .videosGrid .video .thumbnail {
+    height: 135px;
+    display: none;
+}
+
+.videos .videosGrid .video .thumbnail:hover {
+    opacity: .8;
+}
+
+.videos .videosGrid .video .thumbnail:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h6 {
+    color: white;
+    background-color: black;
+    width: 32px;
+    height: 17px;
+    font-size: 15px;
+}
+
+.overlay {
+    position: relative;
+    /* top: 80%; */
+    left: 75%;
+    transition: .3s ease;
+    opacity: 1;
+    bottom: 20%;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.videos .videosGrid .video .thumbnail img {
+    object-fit: cover;
+    height: 100%;
+    width: 200px;
+}
+
+.author img {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+ul {
+    display: flex;
+    float: right;
+}
+
+li {
+    padding: 5px;
+}
+
+li .fa-share {
+    color: grey;
+}
+
+li .material-icons {
+    color: grey;
+}
+
+li .fa-share:hover {
+    color: blue;
+}
+
+li .material-icons:hover {
+    color: blue;
+}
+
+li:hover {
+    border-bottom: #444 solid 2px;
+}
+
+.details {
+    display: flex;
+    margin-top: 10px;
+}
+
+.details .title {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details .title h3 {
+    color: rgb(3, 3, 3);
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+
+.details .title a,
+span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+}
+
+.details .title .info p {
+    padding-top: 15px;
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+}
+
+.details .title .info h4 {
+    padding-top: 15px;
+    text-decoration: none;
+    color: rgb(95, 84, 252);
+    font-size: 16px;
+    text-align: center;
+}
